@@ -6,8 +6,10 @@ WriteMakefile
   'NAME' => 'L',
   'VERSION_FROM' => 'lib/L.pm',
   'PREREQ_PM' => {
+                   'Module::Load' => 0,
                    'Test::More' => '0.98',
-                   'Test::Requires' => '0.06'
+                   'Test::Requires' => '0.06',
+                   'parent' => 0
                  },
   'INSTALLDIRS' => 'site',
   'EXE_FILES' => [],

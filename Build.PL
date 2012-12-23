@@ -5,7 +5,7 @@ use Module::Build;
 my $build = Module::Build->new(
     license        => 'perl',
     dynamic_config => 0,
-    dist_abstract  => 'XXX',
+    dist_abstract  => 'Module loader for one liner.',
 
     build_requires     => {
         'Test::More'     => '0.98',
@@ -14,14 +14,13 @@ my $build = Module::Build->new(
     configure_requires => { 'Module::Build' => '0.38' },
     requires           => {
         perl         => '5.008001',
-        # 'parent'     => 0,
+        'parent'     => 0,
+        'Module::Load' => 0,
     },
 
     no_index    => { 'directory' => [ 'inc' ] },
     name        => 'L',
     module_name => 'L',
-
-    # script_files => [''],
 
     test_files           => (-d '.git' || $ENV{RELEASE_TESTING}) ? 't/ xt/' : 't/',
     recursive_test_files => 1,

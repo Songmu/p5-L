@@ -1,19 +1,20 @@
 NAME
-    L - Perl extention to do something
+    L - Perl extention to load module in one liner.
 
 VERSION
     This document describes L version 0.01.
 
 SYNOPSIS
-        use L;
+        % perl -ML -E 'say l("String::Random")->new->randregex("[0-9a-zA-Z]{12}")'
 
 DESCRIPTION
-    # TODO
+    Module loader for one lineer.
 
 INTERFACE
   Functions
-   "hello()"
-    # TODO
+   "l($module_name)"
+    Loading module specified by argument and returning the module name
+    loaded.
 
 DEPENDENCIES
     Perl 5.8.1 or later.

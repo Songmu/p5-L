@@ -5,13 +5,23 @@ use warnings;
 
 our $VERSION = '0.01';
 
+use Module::Load ();
+use parent qw/Exporter/;
+
+our @EXPORT = qw/l/;
+
+sub l {
+    my $kls = shift or die 'No modules are specified!';
+    Module::Load::load($kls);
+    $kls;
+}
 
 1;
 __END__
 
 =head1 NAME
 
-L - Perl extention to do something
+L - Perl extention to load module in one liner.
 
 =head1 VERSION
 
@@ -19,19 +29,19 @@ This document describes L version 0.01.
 
 =head1 SYNOPSIS
 
-    use L;
+    % perl -ML -E 'say l("String::Random")->new->randregex("[0-9a-zA-Z]{12}")'
 
 =head1 DESCRIPTION
 
-# TODO
+Module loader for one lineer.
 
 =head1 INTERFACE
 
 =head2 Functions
 
-=head3 C<< hello() >>
+=head3 C<< l($module_name) >>
 
-# TODO
+Loading module specified by argument and returning the module name loaded.
 
 =head1 DEPENDENCIES
 
