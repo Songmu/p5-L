@@ -16,6 +16,21 @@ sub l {
     $kls;
 }
 
+{
+    package UNIVERSAL;
+
+    our $AUTOLOAD;
+    sub AUTOLOAD {
+        return if $AUTOLOAD =~ /::DESTROY$/;
+        if (my ($module, $method) = ($AUTOLOAD =~ /^(.*)::(.*?)$/)) {
+            Module::Load::load($module);
+            $module->can($method)->(@_);
+        } else {
+            die "WTF? $AUTOLOAD";
+        }
+    }
+}
+
 1;
 __END__
 
