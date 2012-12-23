@@ -33,7 +33,7 @@ This document describes L version 0.01.
 
 =head1 DESCRIPTION
 
-Module loader for one lineer.
+Module loader for one liner.
 
 =head1 INTERFACE
 
