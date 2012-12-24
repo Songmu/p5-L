@@ -1,20 +1,17 @@
 NAME
-    L - Perl extention to load module in one liner.
+    L - Perl extention to load module automatically in one liner.
 
 VERSION
     This document describes L version 0.01.
 
 SYNOPSIS
-        % perl -ML -E 'say l("String::Random")->new->randregex("[0-9a-zA-Z]{12}")'
+        % perl -ML -E 'say String::Random->new->randregex("[0-9a-zA-Z]{12}")'
 
 DESCRIPTION
-    Module loader for one lineer.
+    Module auto loader for one liner.
 
-INTERFACE
-  Functions
-   "l($module_name)"
-    Loading module specified by argument and returning the module name
-    loaded.
+    This modules is dangerous, then don't use this module in other perl
+    modules, scripts or product code. This should be used only in one liner.
 
 DEPENDENCIES
     Perl 5.8.1 or later.

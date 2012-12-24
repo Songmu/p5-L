@@ -5,26 +5,27 @@ use warnings;
 
 our $VERSION = '0.01';
 
+use Carp ();
 use Module::Load ();
-use parent qw/Exporter/;
-
-our @EXPORT = qw/l/;
-
-sub l {
-    my $kls = shift or die 'No modules are specified!';
-    Module::Load::load($kls);
-    $kls;
-}
 
 {
-    package UNIVERSAL;
+    package
+        UNIVERSAL;
 
     our $AUTOLOAD;
     sub AUTOLOAD {
         return if $AUTOLOAD =~ /::DESTROY$/;
         if (my ($module, $method) = ($AUTOLOAD =~ /^(.*)::(.*?)$/)) {
+            if ($module eq 'main') {
+                Carp::croak(qq{Undefined subroutine &main::$method called});
+            }
+
             Module::Load::load($module);
-            $module->can($method)->(@_);
+
+            my $func = $module->can($method)
+                or Carp::croak qq{Can't locate object method "$method" via package "$module"};
+
+            $func->(@_);
         } else {
             die "WTF? $AUTOLOAD";
         }
@@ -36,7 +37,7 @@ __END__
 
 =head1 NAME
 
-L - Perl extention to load module in one liner.
+L - Perl extention to load module automatically in one liner.
 
 =head1 VERSION
 
@@ -44,19 +45,14 @@ This document describes L version 0.01.
 
 =head1 SYNOPSIS
 
-    % perl -ML -E 'say l("String::Random")->new->randregex("[0-9a-zA-Z]{12}")'
+    % perl -ML -E 'say String::Random->new->randregex("[0-9a-zA-Z]{12}")'
 
 =head1 DESCRIPTION
 
-Module loader for one liner.
+Module auto loader for one liner.
 
-=head1 INTERFACE
-
-=head2 Functions
-
-=head3 C<< l($module_name) >>
-
-Loading module specified by argument and returning the module name loaded.
+This modules is dangerous, then don't use this module in other perl modules, scripts or product code.
+This should be used only in one liner.
 
 =head1 DEPENDENCIES
 

@@ -8,8 +8,7 @@ WriteMakefile
   'PREREQ_PM' => {
                    'Module::Load' => 0,
                    'Test::More' => '0.98',
-                   'Test::Requires' => '0.06',
-                   'parent' => 0
+                   'Test::Requires' => '0.06'
                  },
   'INSTALLDIRS' => 'site',
   'EXE_FILES' => [],
