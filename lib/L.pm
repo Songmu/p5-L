@@ -72,6 +72,12 @@ L<perl>
 
 Masayuki Matsuki E<lt>y.songmu@gmail.comE<gt>
 
+=head1 CONTRIBUTORS
+
+Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>
+
+(Most of code is written by him.)
+
 =head1 LICENSE AND COPYRIGHT
 
 Copyright (c) 2012, Masayuki Matsuki. All rights reserved.
