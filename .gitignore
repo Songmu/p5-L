@@ -29,3 +29,11 @@ cover_db*
 Build
 _build/*
 tmp/
+/L-*
+/.build
+/_build_params
+/Build
+/Build.bat
+!Build/
+!META.json
+!LICENSE

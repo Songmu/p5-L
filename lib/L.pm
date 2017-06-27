@@ -3,7 +3,7 @@ use 5.008_001;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+use version 0.77; our $VERSION = version->declare("v1.0.0");
 
 use Carp ();
 use Module::Load ();
