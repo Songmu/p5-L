@@ -28,8 +28,7 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Test::More" : "0.98",
-            "Test::Requires" : "0.06"
+            "Test::More" : "0.98"
          }
       },
       "configure" : {
@@ -65,7 +64,7 @@
          "web" : "https://github.com/Songmu/p5-L"
       }
    },
-   "version" : "0.01",
+   "version" : "v1.0.0",
    "x_authority" : "cpan:SONGMU",
    "x_contributors" : [
       "tokuhirom <tokuhirom@gmail.com>"

@@ -4,7 +4,7 @@ L - Perl extention to load module automatically in one liner.
 
 # VERSION
 
-This document describes L version 0.01.
+This document describes L version v1.0.0.
 
 # SYNOPSIS
 
