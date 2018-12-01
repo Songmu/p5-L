@@ -37,7 +37,7 @@ __END__
 
 =head1 NAME
 
-L - Perl extention to load module automatically in one liner.
+L - Perl extention to load modules automatically in one-liners.
 
 =head1 VERSION
 
@@ -49,10 +49,10 @@ This document describes L version v1.0.0.
 
 =head1 DESCRIPTION
 
-Module auto loader for one liner.
+Module auto-loader for one-liners.
 
-This modules is dangerous, then don't use this module in other perl modules, scripts or product code.
-This should be used only in one liner.
+This module is dangerous, so don't use this module in other perl modules, scripts or production code.
+This should be used only in one-liners.
 
 =head1 DEPENDENCIES
 
