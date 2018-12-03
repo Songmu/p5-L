@@ -1,10 +1,10 @@
 # NAME
 
-L - Perl extention to load modules automatically in one-liners.
+L - Perl extension to load modules automatically in one-liners.
 
 # VERSION
 
-This document describes L version v1.0.0.
+This document describes L version v1.0.1.
 
 # SYNOPSIS
 
@@ -14,8 +14,8 @@ This document describes L version v1.0.0.
 
 Module auto-loader for one-liners.
 
-This module is dangerous, so don't use this module in other perl modules,
-scripts or production code. This should be used only in one-liners.
+This module is dangerous, so don't use this module in other perl modules, scripts or production code.
+This should be used only in one-liners.
 
 # DEPENDENCIES
 
